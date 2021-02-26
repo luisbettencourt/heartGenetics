@@ -52,6 +52,7 @@ const LoginForm = ({ classes, signIn }: PropsAndStyles) => {
     <form onSubmit={onSignIn} className={classes.form}>
       <TextField
         id="email"
+        type="email"
         label="Email Address"
         value={email}
         onChange={(e: ChangeEvent<HTMLInputElement>) =>
