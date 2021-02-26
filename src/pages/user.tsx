@@ -22,9 +22,6 @@ const styles = createStyles({
     overflowY: "auto",
     marginBottom: 20,
   },
-  avatar: {
-    marginBottom: 20,
-  },
 });
 
 export interface Props {}
@@ -36,9 +33,7 @@ const UserPage = ({ classes }: PropsAndStyles) => {
 
   return (
     <div className={classes.users}>
-      <div className={classes.avatar}>
-        <Avatar />
-      </div>
+      <Avatar />
       <Paper elevation={1} className={classes.paper}>
         <UserDetails id={parseInt(id)} />
       </Paper>

@@ -4,11 +4,16 @@ import Button from "@material-ui/core/Button";
 
 const styles = createStyles({
   avatar: {
+    width: 800,
+    maxWidth: "100%",
     height: 80,
     display: "flex",
     justifyContent: "flex-end",
+    marginBottom: 10,
   },
   image: {
+    width: 68,
+    height: 68,
     borderRadius: "50%",
   },
   content: {

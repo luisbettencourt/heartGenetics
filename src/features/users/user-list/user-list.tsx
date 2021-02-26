@@ -1,23 +1,33 @@
 import React, { useEffect } from "react";
-import { createStyles, WithStyles, withStyles } from "@material-ui/core/styles";
+import {
+  createStyles,
+  WithStyles,
+  withStyles,
+  Theme,
+} from "@material-ui/core/styles";
 import axios from "axios";
 import { User, UserData } from "../redux/reducer";
-import UserAvatar from "../../../components/user";
+import UserAvatar from "../../../components/user-avatar";
 import { useHistory } from "react-router";
+import Button from "@material-ui/core/Button";
 
-const styles = createStyles({
-  usersList: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    padding: 50,
-  },
-  user: {
-    display: "flex",
-    justifyContent: "center",
-    margin: "10px 0",
-  },
-});
+const styles = (theme: Theme) =>
+  createStyles({
+    usersList: {
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      padding: 50,
+      [theme.breakpoints.down("xs")]: {
+        padding: 20,
+      },
+    },
+    user: {
+      display: "flex",
+      justifyContent: "center",
+      margin: "10px 0",
+    },
+  });
 
 export interface Props {
   users: User[];
@@ -40,12 +50,12 @@ const Avatar = ({ classes, users, createUsers }: PropsAndStyles) => {
   return (
     <div className={classes.usersList}>
       {users.map((user) => (
-        <div className={classes.user}>
-          <UserAvatar
-            user={user}
-            handleClick={() => history.push(`users/${user.id}`)}
-          />
-        </div>
+        <Button
+          className={classes.user}
+          onClick={() => history.push(`users/${user.id}`)}
+        >
+          <UserAvatar user={user} />
+        </Button>
       ))}
     </div>
   );

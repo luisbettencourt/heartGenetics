@@ -1,21 +1,30 @@
 import React from "react";
-import { createStyles, WithStyles, withStyles } from "@material-ui/core/styles";
+import {
+  createStyles,
+  WithStyles,
+  withStyles,
+  Theme,
+} from "@material-ui/core/styles";
 import { User } from "../redux/reducer";
 import UserInfo from "../../../components/user-info";
 
-const styles = createStyles({
-  usersList: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    padding: 50,
-  },
-  user: {
-    display: "flex",
-    justifyContent: "center",
-    margin: "10px 0",
-  },
-});
+const styles = (theme: Theme) =>
+  createStyles({
+    usersList: {
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      padding: 50,
+      [theme.breakpoints.down("xs")]: {
+        padding: "40px 20px",
+      },
+    },
+    user: {
+      display: "flex",
+      justifyContent: "center",
+      margin: "10px 0",
+    },
+  });
 
 export interface Props {
   user?: User;

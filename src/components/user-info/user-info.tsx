@@ -9,12 +9,6 @@ import Edit from "@material-ui/icons/Edit";
 import Delete from "@material-ui/icons/Delete";
 
 const styles = createStyles({
-  avatar: {
-    height: 80,
-    display: "flex",
-    justifyContent: "center",
-    textTransform: "none",
-  },
   header: {
     display: "flex",
     justifyContent: "space-between",
@@ -28,7 +22,6 @@ const styles = createStyles({
     borderRadius: "50%",
   },
   content: {
-    marginLeft: 10,
     width: "100%",
     display: "flex",
     flexDirection: "column",
